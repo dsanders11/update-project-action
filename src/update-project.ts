@@ -232,7 +232,7 @@ export async function updateField(
     valueType = "singleSelectOptionId";
   } else if (fieldType === "date") {
     // Convert potential datetimes to just the date
-    valueToSet = new Date(value).toISOString().split('T')[0];
+    valueToSet = new Date(value).toISOString().split("T")[0];
     valueType = fieldType;
   } else {
     valueToSet = value;
@@ -241,7 +241,9 @@ export async function updateField(
 
   const result: GraphQlQueryResponseData = await octokit.graphql(
     `
-    mutation($project: ID!, $item: ID!, $field: ID!, $value: ${valueGraphqlType(fieldType)}) {
+    mutation($project: ID!, $item: ID!, $field: ID!, $value: ${valueGraphqlType(
+      fieldType
+    )}) {
       updateProjectV2ItemFieldValue(
         input: {
           projectId: $project
