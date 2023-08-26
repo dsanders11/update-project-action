@@ -204,7 +204,7 @@ function updateField(projectMetadata, contentMetadata, value) {
         }
         else if (fieldType === "date") {
             // Convert potential datetimes to just the date
-            valueToSet = new Date(value).toISOString().split('T')[0];
+            valueToSet = new Date(value).toISOString().split("T")[0];
             valueType = fieldType;
         }
         else {
