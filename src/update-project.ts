@@ -238,7 +238,7 @@ export async function updateField(
     valueToSet = value;
     valueType = fieldType;
   }
-  
+
   const result: GraphQlQueryResponseData = await octokit.graphql(
     `
     mutation($project: ID!, $item: ID!, $field: ID!, $value: ${valueGraphqlType(fieldType)}) {
